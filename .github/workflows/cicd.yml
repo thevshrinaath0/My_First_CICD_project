@@ -11,13 +11,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: install packages
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install packages
         run: make install
-      - name: lint
+
+      - name: Lint
         run: make lint
-      - name: test
+
+      - name: Test
         run: make test
-      - name: format
+
+      - name: Format
         run: make format
-      - name: deploy
+
+      - name: Deploy
         run: make deploy
