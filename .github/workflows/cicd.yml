@@ -2,28 +2,25 @@ name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
 
-      - name: Set up Python 3.14
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: 3.14
+          python-version: 3.11
 
-      - name: Upgrade pip and key packages
-        run: |
-          python -m pip install --upgrade pip
-          pip install --upgrade cython scikit-learn
-
-      - name: Install project dependencies
+      - name: Install dependencies
         run: make install
 
       - name: Lint
