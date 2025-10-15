@@ -23,3 +23,4 @@ A simple project that demonstrates Continuous Integration and Deployment (CI/CD)
 ```bash
 ./main.py add 2 3
 ./main.py subtract 5 2
+./main.py both 3 9
