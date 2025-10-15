@@ -55,5 +55,3 @@ def both_cli(a, b):
     click.echo(click.style(f"Difference: {sub_result}", fg="yellow"))
 if __name__ == "__main__":
     cli()
-
-    # pylint: disable=no-value-for-parameter
